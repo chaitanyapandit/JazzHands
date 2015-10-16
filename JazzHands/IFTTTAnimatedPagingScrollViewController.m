@@ -96,6 +96,12 @@
 
 - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(id<UIViewControllerTransitionCoordinator>)coordinator
 {
+    if (size.width > size.height){ // Landscape
+        size.width -= self.hEdgeSpacingLandscape*2.0;
+    } else {
+        size.width -= self.hEdgeSpacingPortrait*2.0;
+    }
+    
     [super viewWillTransitionToSize:size withTransitionCoordinator:coordinator];
     
     CGFloat newPageWidth = size.width;
@@ -133,7 +139,7 @@
     }
     
     CGFloat futurePixelOffset = self.pageOffset * newPageWidth;
-
+    
     [UIView animateWithDuration:duration animations:^{
         [self animateCurrentFrame];
         [self.scrollView setContentOffset:CGPointMake(futurePixelOffset, 0.f)];

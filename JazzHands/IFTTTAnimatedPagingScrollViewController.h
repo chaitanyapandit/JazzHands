@@ -15,6 +15,8 @@
 @property (nonatomic, strong) IFTTTAnimator *animator;
 @property (nonatomic, strong) UIScrollView *scrollView;
 @property (nonatomic, strong) UIView *contentView;
+@property (nonatomic) CGFloat hEdgeSpacingLandscape;
+@property (nonatomic) CGFloat hEdgeSpacingPortrait;
 
 - (NSUInteger)numberOfPages;
 - (CGFloat)pageWidth;
