@@ -28,10 +28,12 @@
         [self createKeyframeAnimation];
         
         // CAAnimations are lost when application enters the background, so re-add them
+        /* Removed by chaitanya since this messes up everything else
         [[NSNotificationCenter defaultCenter] addObserver:self
                                                  selector:@selector(createKeyframeAnimation)
                                                      name:UIApplicationDidBecomeActiveNotification
                                                    object:nil];
+         */
     }
     return self;
 }
